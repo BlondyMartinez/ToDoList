@@ -1,4 +1,5 @@
 body {
+    box-sizing: border-box;
     background-color: rgb(227, 212, 240);
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
@@ -10,8 +11,19 @@ h1 {
     font-size: 4rem;
 }
 
+input{
+    padding: 0 !important;
+}
+
 .note {
     background-color: white;
+    box-shadow: 5px 5px 6px #cab6ca;
+}
+
+.outline {
     outline: 1px solid rgb(179 164 189);
-    box-shadow: 5px 5px 6px #c8aec8;
+}
+
+.border-bottom {
+    border-bottom: 1px solid rgb(203, 185, 214);
 }
