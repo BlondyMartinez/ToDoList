@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import Task from "./task";
 
 const Note = () => {
-    const [inputValue, setInputValue ] = useState('');
+    const [inputValue, setInputValue] = useState('');
     const [tasks, setTasks] = useState([]);
 
     const handleKeyDown = (event) => {
         if (event.key === "Enter" && inputValue.trim() !== "") {
             const newTask = {
                 text: inputValue.trim(),
-                id: tasks.length + 1
+                id: new Date()
             }
 
             setTasks([newTask, ...tasks]);
@@ -39,11 +39,15 @@ const Note = () => {
 
                 {tasks.map((task) => (
                     <React.Fragment key={task.id}>
-                        <Task task={task.text} border={'border-bottom'} />
+                        <Task task={task.text} tasks={tasks} setTasks={setTasks} id={task.id} />
                     </React.Fragment>
                 ))}
 
-				<div className="p-2" style={{ fontSize: '0.8rem' }}>{tasks.length == 0 ? 'No tasks. Add a task.' : `${tasks.length} items left.`}</div>
+				<div className="p-2" style={{ fontSize: '0.8rem' }}>
+                    {tasks.length == 0 
+                        ? 'No tasks. Add a task.' 
+                        : `${tasks.length} ${tasks.length != 1 ? 'items' : 'item'} left.`}
+                    </div>
 			</div>
 			<div className="note outline" style={{ width: `95%`, height: '5px', zIndex: '-1' }}></div>
 			<div className="note outline" style={{ width: `90%`, height: '5px', zIndex: '-2'}}></div>
