@@ -25,7 +25,7 @@ const Note = () => {
 	return (
 		<div className="col-lg-4  col-sm-11 col-md-8 d-flex flex-column justify-content-center align-items-center">
 			<div className="note align-middle w-100 outline">
-				<div className="py-2 px-5 border-bottom">
+				<div className="py-2 px-5 border-at-bottom">
                     <input 
                         type="text" 
                         className="form-control border-0" 
