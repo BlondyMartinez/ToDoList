@@ -1,9 +1,26 @@
+.light-theme {
+    --background:  rgb(227, 212, 240);
+    --shadow: #cab6ca;
+    --note-background: white;
+    --outline:  rgb(179 164 189);
+    --border-bottom: rgb(203, 185, 214);
+    --text-color: black;
+}
+
+.dark-theme {
+    --background:  rgb(69, 57, 78);
+    --shadow: rgb(43, 33, 50);
+    --note-background:  #7b6888;
+    --outline:  rgb(131, 113, 146);
+    --border-bottom:  rgb(150, 128, 168);
+    --text-color: white;
+}
+
 body {
     box-sizing: border-box;
-    background-color: rgb(227, 212, 240);
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 100;
+    font-weight: 300;
 }
 
 h1 {
@@ -13,17 +30,30 @@ h1 {
 
 input{
     padding: 0 !important;
+    background-color: var(--note-background) !important;
+    color: var(--text-color) !important;;
+}
+
+.bg {
+    background-color: var(--background);
+    height: 100vh;
+    color: var(--text-color);
+    z-index: -3;
+}
+
+::placeholder {
+    color: var(--text-color) !important;
 }
 
 .note {
-    background-color: white;
-    box-shadow: 5px 5px 6px #cab6ca;
+    background-color: var(--note-background);
+    box-shadow: 5px 5px 6px var(--shadow);
 }
 
 .outline {
-    outline: 1px solid rgb(179 164 189);
+    outline: 1px solid var(--outline);
 }
 
-.border-bottom {
-    border-bottom: 1px solid rgb(203, 185, 214);
+.border-at-bottom {
+    border-bottom: 1px solid var(--border-bottom);
 }
