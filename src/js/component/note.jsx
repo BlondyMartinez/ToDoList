@@ -24,11 +24,11 @@ const Note = () => {
 
 	return (
 		<div className="col-lg-4  col-sm-11 col-md-8 d-flex flex-column justify-content-center align-items-center">
-			<div className="note align-middle w-100 outline">
+			<div className="note align-middle w-100 outline" style={{ zIndex: '2' }}>
 				<div className="py-2 px-5 border-at-bottom">
                     <input 
                         type="text" 
-                        className="form-control border-0" 
+                        className="form-control border-0 input-text" 
                         id="input-text" 
                         placeholder="What needs to be done?" 
                         onChange={handleChange}
@@ -39,7 +39,7 @@ const Note = () => {
 
                 {tasks.map((task) => (
                     <React.Fragment key={task.id}>
-                        <Task task={task.text} tasks={tasks} setTasks={setTasks} id={task.id} />
+                        <Task task={task.text} id={task.id} tasks={tasks} setTasks={setTasks} />
                     </React.Fragment>
                 ))}
 
@@ -47,10 +47,10 @@ const Note = () => {
                     {tasks.length == 0 
                         ? 'No tasks. Add a task.' 
                         : `${tasks.length} ${tasks.length != 1 ? 'items' : 'item'} left.`}
-                    </div>
+                </div>
 			</div>
-			<div className="note outline" style={{ width: `95%`, height: '5px', zIndex: '-1' }}></div>
-			<div className="note outline" style={{ width: `90%`, height: '5px', zIndex: '-2'}}></div>
+			<div className="note outline" style={{ width: `95%`, height: '5px', zIndex: '1' }}></div>
+			<div className="note outline" style={{ width: `90%`, height: '5px' }}></div>
 		</div>
 	);
 };

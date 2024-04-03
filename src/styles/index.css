@@ -28,21 +28,20 @@ h1 {
     font-size: 4rem;
 }
 
-input{
-    padding: 0 !important;
+.input-text {
+    padding: 0;
     background-color: var(--note-background) !important;
-    color: var(--text-color) !important;;
+    color: var(--text-color) !important;
+}
+
+.input-text::placeholder {
+    color: var(--text-color);
 }
 
 .bg {
     background-color: var(--background);
     height: 100vh;
     color: var(--text-color);
-    z-index: -3;
-}
-
-::placeholder {
-    color: var(--text-color) !important;
 }
 
 .note {

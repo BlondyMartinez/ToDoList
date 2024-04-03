@@ -11,7 +11,7 @@ const Home = () => {
 
 	return (
 		<div className={`d-flex flex-column align-items-center bg ${theme}`}>
-			<div onClick={handleClick} className="ms-auto m-2" role="button"> 
+			<div onClick={handleClick} className="ms-auto m-2 fs-4" role="button"> 
 				{theme == 'light-theme' ? <i className="fa-solid fa-moon"></i> : <i className="fa-solid fa-sun"></i>} 
 			</div>
 			<h1 className="text-center mt-5">todos</h1>
